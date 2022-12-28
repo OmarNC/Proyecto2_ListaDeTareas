@@ -9,23 +9,37 @@
 /* Begin PBXBuildFile section */
 		D3867CC82950D01800876AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CC72950D01800876AA4 /* AppDelegate.swift */; };
 		D3867CCA2950D01800876AA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CC92950D01800876AA4 /* SceneDelegate.swift */; };
-		D3867CCC2950D01800876AA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CCB2950D01800876AA4 /* ViewController.swift */; };
+		D3867CCC2950D01800876AA4 /* ListaDeTareasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CCB2950D01800876AA4 /* ListaDeTareasViewController.swift */; };
 		D3867CCF2950D01800876AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3867CCD2950D01800876AA4 /* Main.storyboard */; };
 		D3867CD22950D01800876AA4 /* Proyecto2_ListaDeTareas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3867CD02950D01800876AA4 /* Proyecto2_ListaDeTareas.xcdatamodeld */; };
 		D3867CD42950D01A00876AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3867CD32950D01A00876AA4 /* Assets.xcassets */; };
 		D3867CD72950D01A00876AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3867CD52950D01A00876AA4 /* LaunchScreen.storyboard */; };
+		D3867CDF29515CBC00876AA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3867CDE29515CBC00876AA4 /* Localizable.strings */; };
+		D3867CE1295210E000876AA4 /* ListaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CE0295210E000876AA4 /* ListaTableViewCell.swift */; };
+		D3867CE82952C8A100876AA4 /* Tarea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CE62952C8A100876AA4 /* Tarea+CoreDataClass.swift */; };
+		D3867CE92952C8A100876AA4 /* Tarea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CE72952C8A100876AA4 /* Tarea+CoreDataProperties.swift */; };
+		D3867CEB2959C42E00876AA4 /* TareaDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CEA2959C42E00876AA4 /* TareaDataManager.swift */; };
+		D3867CED2959CDDF00876AA4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CEC2959CDDF00876AA4 /* Helper.swift */; };
+		D3867CF0295A09D300876AA4 /* TareaDetalleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3867CEF295A09D300876AA4 /* TareaDetalleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D3867CC42950D01800876AA4 /* Proyecto2_ListaDeTareas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proyecto2_ListaDeTareas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3867CC72950D01800876AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3867CC92950D01800876AA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3867CCB2950D01800876AA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3867CCB2950D01800876AA4 /* ListaDeTareasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeTareasViewController.swift; sourceTree = "<group>"; };
 		D3867CCE2950D01800876AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3867CD12950D01800876AA4 /* Proyecto2_ListaDeTareas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Proyecto2_ListaDeTareas.xcdatamodel; sourceTree = "<group>"; };
 		D3867CD32950D01A00876AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3867CD62950D01A00876AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3867CD82950D01A00876AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3867CDE29515CBC00876AA4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D3867CE0295210E000876AA4 /* ListaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaTableViewCell.swift; sourceTree = "<group>"; };
+		D3867CE62952C8A100876AA4 /* Tarea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tarea+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3867CE72952C8A100876AA4 /* Tarea+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tarea+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3867CEA2959C42E00876AA4 /* TareaDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TareaDataManager.swift; sourceTree = "<group>"; };
+		D3867CEC2959CDDF00876AA4 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		D3867CEF295A09D300876AA4 /* TareaDetalleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TareaDetalleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +72,47 @@
 		D3867CC62950D01800876AA4 /* Proyecto2_ListaDeTareas */ = {
 			isa = PBXGroup;
 			children = (
+				D3867CEE2959CEF700876AA4 /* Helper */,
+				D3867CE32952907E00876AA4 /* Model */,
+				D3867CE2295212B900876AA4 /* View */,
 				D3867CC72950D01800876AA4 /* AppDelegate.swift */,
 				D3867CC92950D01800876AA4 /* SceneDelegate.swift */,
-				D3867CCB2950D01800876AA4 /* ViewController.swift */,
+				D3867CCB2950D01800876AA4 /* ListaDeTareasViewController.swift */,
+				D3867CEF295A09D300876AA4 /* TareaDetalleTableViewController.swift */,
 				D3867CCD2950D01800876AA4 /* Main.storyboard */,
 				D3867CD32950D01A00876AA4 /* Assets.xcassets */,
 				D3867CD52950D01A00876AA4 /* LaunchScreen.storyboard */,
 				D3867CD82950D01A00876AA4 /* Info.plist */,
 				D3867CD02950D01800876AA4 /* Proyecto2_ListaDeTareas.xcdatamodeld */,
+				D3867CDE29515CBC00876AA4 /* Localizable.strings */,
 			);
 			path = Proyecto2_ListaDeTareas;
+			sourceTree = "<group>";
+		};
+		D3867CE2295212B900876AA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3867CE0295210E000876AA4 /* ListaTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3867CE32952907E00876AA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3867CE62952C8A100876AA4 /* Tarea+CoreDataClass.swift */,
+				D3867CE72952C8A100876AA4 /* Tarea+CoreDataProperties.swift */,
+				D3867CEA2959C42E00876AA4 /* TareaDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3867CEE2959CEF700876AA4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D3867CEC2959CDDF00876AA4 /* Helper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3867CD72950D01A00876AA4 /* LaunchScreen.storyboard in Resources */,
+				D3867CDF29515CBC00876AA4 /* Localizable.strings in Resources */,
 				D3867CD42950D01A00876AA4 /* Assets.xcassets in Resources */,
 				D3867CCF2950D01800876AA4 /* Main.storyboard in Resources */,
 			);
@@ -141,10 +187,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3867CE1295210E000876AA4 /* ListaTableViewCell.swift in Sources */,
+				D3867CE92952C8A100876AA4 /* Tarea+CoreDataProperties.swift in Sources */,
 				D3867CD22950D01800876AA4 /* Proyecto2_ListaDeTareas.xcdatamodeld in Sources */,
-				D3867CCC2950D01800876AA4 /* ViewController.swift in Sources */,
+				D3867CEB2959C42E00876AA4 /* TareaDataManager.swift in Sources */,
+				D3867CCC2950D01800876AA4 /* ListaDeTareasViewController.swift in Sources */,
+				D3867CED2959CDDF00876AA4 /* Helper.swift in Sources */,
 				D3867CC82950D01800876AA4 /* AppDelegate.swift in Sources */,
 				D3867CCA2950D01800876AA4 /* SceneDelegate.swift in Sources */,
+				D3867CE82952C8A100876AA4 /* Tarea+CoreDataClass.swift in Sources */,
+				D3867CF0295A09D300876AA4 /* TareaDetalleTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
