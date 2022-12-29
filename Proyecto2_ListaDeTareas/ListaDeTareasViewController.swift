@@ -11,6 +11,8 @@ class ListaDeTareasViewController: UIViewController {
 
     @IBOutlet weak var listaTableView: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var titleSearchTextField: UITextField!
+    @IBOutlet weak var dateSearchTextField: UITextField!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -20,6 +22,16 @@ class ListaDeTareasViewController: UIViewController {
         super.viewDidLoad()
         dataManager = TareaDataManager(context: context)
         dataManager?.fetchData()
+        
+        titleSearchTextField.delegate = self
+        titleSearchTextField.returnKeyType = .search
+        dateSearchTextField.returnKeyType = .search
+        
+        //Ocultar el teclado cuando se hace un tap fuera del campo de texto
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
     
     
@@ -60,20 +72,33 @@ class ListaDeTareasViewController: UIViewController {
         if listaTableView.isEditing {
             listaTableView.setEditing(false, animated: true)
             addButton.isEnabled = true
-            sender.title = "Edit"
+            sender.title = NSLocalizedString("BUTTON_EDIT", comment: "BUTTON_EDIT")
         } else {
             listaTableView.setEditing(true, animated: true)
             addButton.isEnabled = false
-            sender.title = "Done"
+            sender.title = NSLocalizedString("BUTTON_DONE", comment: "BUTTON_DONE") 
         }
     }
+    
+    
+    @IBAction func searchButton(_ sender: UIButton) {
+        filtrarTareas()
+
+    }
+    
+    func filtrarTareas()
+    {
+        let title = titleSearchTextField.text ?? ""
+        let dateString  = dateSearchTextField.text ?? ""
+        dataManager?.fetchWithCompountPredicate(title: title, date: dateString)
+        listaTableView.reloadData()
+    }
+    
     
 }
 
 
-// ------------------------- Extension -----------------------------------------------------------
-
-
+// ----------------Extension TableView Events -----------------------------------------------------------
 
 extension ListaDeTareasViewController: UITableViewDelegate, UITableViewDataSource, ListaTableViewCellDelegate {
     
@@ -109,7 +134,7 @@ extension ListaDeTareasViewController: UITableViewDelegate, UITableViewDataSourc
             return nil
         }
         
-        let action = UIContextualAction(style: .destructive, title: "Borrar") {(action, view, completionHandler) in
+        let action = UIContextualAction(style: .destructive, title: NSLocalizedString("ALERT_TITLE_BORRAR", comment: "ALERT_TITLE_BORRAR")) {(action, view, completionHandler) in
             self.dataManager?.deleteTarea(at: indexPath.row)
             tableView.reloadData()
         }
@@ -119,3 +144,11 @@ extension ListaDeTareasViewController: UITableViewDelegate, UITableViewDataSourc
 }
 
 
+// ----- Extension TextField delegate ------
+extension ListaDeTareasViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        filtrarTareas()
+        return true
+    }
+}

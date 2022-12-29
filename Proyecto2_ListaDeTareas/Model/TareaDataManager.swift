@@ -37,22 +37,32 @@ class TareaDataManager
         }
     }
     
-    func fetchWithCompountPredicate(title: String = "", notes : String = "")
+    func fetchWithCompountPredicate(title: String = "", date : String = "")
     {
         var predicates : [NSPredicate] = []
         
-        if !(title.isEmpty) {
-            predicates.append(NSPredicate(format: "titulo = %@", title))
-        }
-        if !(notes.isEmpty) {
-            predicates.append(NSPredicate(format: "nota = %@", notes))
+        if title.isEmpty && date.isEmpty {
+            fetchData()
+            return
         }
         
-        let compoundPredicates = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
+        if !(title.isEmpty) {
+            predicates.append(NSPredicate(format: "titulo contains[cd] %@", title))
+        }
+        if !(date.isEmpty) {
+            let dateIni = Helper.dateFormatter(dateString: date + " 00:00:00")
+            let dateFin = Helper.dateFormatter(dateString: date + " 23:59:59")
+            if dateIni != nil && dateFin != nil
+            {
+                predicates.append(NSPredicate(format: "(fecha >= %@) AND (fecha <= %@)", dateIni! as NSDate, dateFin! as NSDate))
+            }
+        }
+        
+        let compoundPredicates = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        let fetchRequestWCP = NSFetchRequest<Tarea>(entityName: "Tarea")
+        fetchRequestWCP.predicate = compoundPredicates
         
         do{
-            let fetchRequestWCP = NSFetchRequest<Tarea>(entityName: "Tarea")
-            fetchRequestWCP.predicate = compoundPredicates
             tareas = try context.fetch(fetchRequestWCP)
         }
         catch{
@@ -101,3 +111,5 @@ class TareaDataManager
         return tareas.count
     }
 }
+
+

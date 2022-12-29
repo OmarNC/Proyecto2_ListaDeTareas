@@ -29,9 +29,24 @@ class TareaDetalleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Ocultar el teclado cuando se hace un tap fuera del campo de texto
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        
+        
+        titleTextField.delegate = self
+        
         if tareaActual != nil {
             updateView()
-        } 
+        }
+        else{
+            titleTextField.becomeFirstResponder()
+        }
+        
+        
+       
     }
     
     
@@ -41,17 +56,19 @@ class TareaDetalleTableViewController: UITableViewController {
     
     
     @IBAction func dateSwitchChanged(_ sender: UISwitch) {
+        self.view.endEditing(true)
         dateLabel.textColor = (dateSwitch.isOn ? .black : .gray)
         tareasDetalleTableView.beginUpdates()
         tareasDetalleTableView.endUpdates()
     }
     
     @IBAction func checkBoxPressed(_ sender: UIButton) {
+        self.view.endEditing(true)
         sender.isSelected = !sender.isSelected
     }
     
     @IBAction func checkBoxChanged(_ sender: UIButton) {
-    
+        self.view.endEditing(true)
         if tareaActual != nil {
             tareaActual?.finalizada = !(tareaActual!.finalizada)
             updateView()
@@ -62,6 +79,7 @@ class TareaDetalleTableViewController: UITableViewController {
     
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        self.view.endEditing(true)
         dateLabel.text = Helper.dateFormatter.string(from: sender.date)
     }
     
@@ -77,7 +95,7 @@ class TareaDetalleTableViewController: UITableViewController {
             perform = true
         }else{
             
-            Helper.AlertMessageOk(title: "Campo vacio", message: "El campo título no debe estar vació", viewController: self)
+            Helper.AlertMessageOk(title: NSLocalizedString("ALERT_TITLE_VACIO", comment: "ALERT_TITLE_VACIO"), message: NSLocalizedString("ALERT_MENSSAGE_VACIO", comment: "ALERT_MENSSAGE_VACIO"), viewController: self)
         }
         return perform
     }
@@ -118,7 +136,7 @@ class TareaDetalleTableViewController: UITableViewController {
     }
 }
 
-// ----- Extension ------
+// ----- Extension TableView events ------
 
 extension TareaDetalleTableViewController
 {
@@ -131,5 +149,16 @@ extension TareaDetalleTableViewController
        default:
             return 44
         }
+    }
+}
+
+
+// ----- Extension TextField delegate ------
+
+extension TareaDetalleTableViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        noteTextView.becomeFirstResponder()
+        return true
     }
 }

@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,27 +23,29 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tareas pendientes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UER-AB-Ybb">
                                         <rect key="frame" x="16" y="0.0" width="343" height="30"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="ColorTitle"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xdm-ff-v0w">
                                         <rect key="frame" x="16" y="48" width="343" height="35"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="De: dd/mm/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mly-S8-bAT">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mly-S8-bAT">
+                                                <rect key="frame" x="0.0" y="0.0" width="131.5" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="sH6-Yc-K4f"/>
                                                     <constraint firstAttribute="height" constant="35" id="zdn-qY-weH"/>
                                                 </constraints>
+                                                <color key="textColor" name="ColorSearchButton"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" textContentType="date-time"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hasta: dd/mm/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWV-Cw-OEx">
-                                                <rect key="frame" x="148" y="0.0" width="131.5" height="35"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="dd/mm/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWV-Cw-OEx">
+                                                <rect key="frame" x="149.5" y="0.0" width="130" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="A9O-80-Xlu"/>
                                                     <constraint firstAttribute="height" constant="35" id="cor-np-9N3"/>
                                                 </constraints>
+                                                <color key="textColor" name="ColorSearchButton"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" textContentType="date-time"/>
                                             </textField>
@@ -51,8 +54,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Ffs-Gc-DfZ"/>
                                                 </constraints>
+                                                <color key="tintColor" name="ColorSearchButton"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" image="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3sC-dk-OV6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -62,26 +69,27 @@
                                             <constraint firstAttribute="trailing" secondItem="YQE-Wd-wDb" secondAttribute="trailing" id="d0V-eD-pxz"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ERK-wg-JDL">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ERK-wg-JDL">
                                         <rect key="frame" x="16" y="101" width="343" height="482"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tareaCell" id="mTZ-8j-LPD" customClass="ListaTableViewCell" customModule="Proyecto2_ListaDeTareas" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.5" width="343" height="44"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="343" height="44.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mTZ-8j-LPD" id="C3K-Q6-gYr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zqc-cX-ACx">
-                                                            <rect key="frame" x="8" y="6" width="327" height="35"/>
+                                                            <rect key="frame" x="8" y="6" width="327" height="35.5"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGr-PC-Ktd">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="35"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="35.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="30" id="Fqx-dS-Ckh"/>
                                                                         <constraint firstAttribute="height" constant="35" id="XsM-Gy-LIo"/>
                                                                     </constraints>
+                                                                    <color key="tintColor" name="ColorButton"/>
                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                     <state key="normal" image="circle" catalog="system"/>
                                                                     <state key="selected" image="checkmark.circle" catalog="system"/>
@@ -90,16 +98,16 @@
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZ2-5f-H9G">
-                                                                    <rect key="frame" x="28" y="0.0" width="191" height="35"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="191" height="35.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="35" id="Dwd-Xp-iw4"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="ColorText"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHH-uF-m3N">
-                                                                    <rect key="frame" x="227" y="0.0" width="100" height="35"/>
+                                                                    <rect key="frame" x="227" y="0.0" width="100" height="35.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Fv2-Aq-Xj6"/>
                                                                         <constraint firstAttribute="height" constant="35" id="YnO-eg-IYz"/>
@@ -153,7 +161,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fnf-KT-IMC" secondAttribute="trailing" id="6Cx-Sa-hgX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fnf-KT-IMC" secondAttribute="bottom" constant="20" id="DdO-qQ-kaP"/>
@@ -162,12 +170,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7ZF-p9-SAW">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="elB-MX-KnT">
+                        <barButtonItem key="leftBarButtonItem" title="Editar" id="elB-MX-KnT">
+                            <color key="tintColor" name="ColorButton"/>
                             <connections>
                                 <action selector="editButtonPressed:" destination="BYZ-38-t0r" id="cf9-rV-JKD"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="d5b-SK-R1V">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="d5b-SK-R1V">
+                            <color key="tintColor" name="ColorButton"/>
                             <connections>
                                 <segue destination="KjD-Xj-qJI" kind="presentation" identifier="AddTareaSegue" id="FrF-YL-PRw"/>
                             </connections>
@@ -175,7 +185,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="d5b-SK-R1V" id="lBa-EH-c9q"/>
+                        <outlet property="dateSearchTextField" destination="bWV-Cw-OEx" id="qGE-Di-6Ev"/>
                         <outlet property="listaTableView" destination="ERK-wg-JDL" id="awY-zA-ZZk"/>
+                        <outlet property="titleSearchTextField" destination="Mly-S8-bAT" id="AD0-ag-Pyj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -190,6 +202,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="BackColor"/>
                         <sections>
                             <tableViewSection headerTitle="Título" id="f9L-gw-jKS">
                                 <cells>
@@ -208,6 +221,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="VD6-WO-1w7"/>
                                                             </constraints>
+                                                            <color key="tintColor" name="ColorButton"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <state key="normal" image="circle" catalog="system"/>
                                                             <state key="selected" image="checkmark.circle" catalog="system"/>
@@ -216,9 +230,10 @@
                                                                 <action selector="checkBoxPressed:" destination="Wsj-hN-cwt" eventType="touchUpInside" id="mbL-P7-HTs"/>
                                                             </connections>
                                                         </button>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-UI-Yx1">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-UI-Yx1">
                                                             <rect key="frame" x="68" y="0.0" width="287" height="34.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="ColorText"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                     </subviews>
@@ -250,8 +265,8 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/1/20, 12:00 a.m." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRj-sM-5pS">
                                                     <rect key="frame" x="73" y="11" width="286" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <color key="textColor" name="ColorText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oCD-Ad-qVh">
@@ -259,6 +274,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="rVn-Zx-xXo"/>
                                                     </constraints>
+                                                    <color key="tintColor" systemColor="linkColor"/>
+                                                    <color key="onTintColor" name="ColorSearchButton"/>
                                                     <connections>
                                                         <action selector="dateSwitchChanged:" destination="Wsj-hN-cwt" eventType="valueChanged" id="ezQ-Kw-EjS"/>
                                                     </connections>
@@ -304,12 +321,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="03c-q5-77h">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03c-q5-77h">
                                                     <rect key="frame" x="16" y="16" width="343" height="145"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
-                                                    <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" name="ColorText"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -331,11 +347,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Ikk-nk-aha">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8Ng-o2-Sg3">
+                            <color key="tintColor" name="ColorButton"/>
                             <connections>
                                 <action selector="exitButtonPressed:" destination="Wsj-hN-cwt" id="1xX-Ww-fs6"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="8hR-gs-NZg">
+                            <color key="tintColor" name="ColorButton"/>
                             <connections>
                                 <segue destination="dS8-yC-kNT" kind="unwind" unwindAction="unwindFromDetailWithSegue:" id="QhS-CC-8M9"/>
                             </connections>
@@ -402,8 +420,23 @@
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <namedColor name="BackColor">
+            <color red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorButton">
+            <color red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ColorSearchButton">
+            <color red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorText">
+            <color red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorTitle">
+            <color red="0.0" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

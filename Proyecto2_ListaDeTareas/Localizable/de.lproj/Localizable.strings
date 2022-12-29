@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Proyecto2_ListaDeTareas
+
+  Created by Omar Nieto on 28/12/22.
+  
+*/
+"ALERT_OK" = "Akzeptieren" ;
+"ALERT_TITLE_BORRAR" = "Löschen" ;
+
+"ALERT_TITLE_VACIO" = "leeres Titelfeld" ;
+"ALERT_MENSSAGE_VACIO" = "Das Titelfeld darf nicht leer sein" ;
+
+
+"BUTTON_EDIT" = "Bearbeiten";
+"BUTTON_DONE" = "Erledigt";

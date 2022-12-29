@@ -1,0 +1,33 @@
+
+/* Class = "UITableViewSection"; headerTitle = "Nota"; ObjectID = "0w4-f8-Zag"; */
+"0w4-f8-Zag.headerTitle" = "서술";
+
+/* Class = "UILabel"; text = "1/1/20, 12:00 a.m."; ObjectID = "BRj-sM-5pS"; */
+"BRj-sM-5pS.text" = "1/1/20, 12:00 a.m.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "EHH-uF-m3N"; */
+"EHH-uF-m3N.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Titulo"; ObjectID = "Mly-S8-bAT"; */
+"Mly-S8-bAT.placeholder" = "표제";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OZ2-5f-H9G"; */
+"OZ2-5f-H9G.text" = "Label";
+
+/* Class = "UILabel"; text = "Tareas pendientes"; ObjectID = "UER-AB-Ybb"; */
+"UER-AB-Ybb.text" = "대기 중인 작업";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YQE-Wd-wDb"; */
+"YQE-Wd-wDb.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "dd/mm/yyyy"; ObjectID = "bWV-Cw-OEx"; */
+"bWV-Cw-OEx.placeholder" = "dd/mm/yyyy";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "elB-MX-KnT"; */
+"elB-MX-KnT.title" = "편집하다";
+
+/* Class = "UITableViewSection"; headerTitle = "Título"; ObjectID = "f9L-gw-jKS"; */
+"f9L-gw-jKS.headerTitle" = "표제";
+
+/* Class = "UITableViewSection"; headerTitle = "Fecha"; ObjectID = "nGK-lC-gYA"; */
+"nGK-lC-gYA.headerTitle" = "날짜";

@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Proyecto2_ListaDeTareas
+
+  Created by Omar Nieto on 28/12/22.
+  
+*/
+"ALERT_OK" = "확인" ;
+"ALERT_TITLE_BORRAR" = "삭제" ;
+
+"ALERT_TITLE_VACIO" = "필드 캡션 비어 있음" ;
+"ALERT_MENSSAGE_VACIO" = "니다" ;
+
+
+"BUTTON_EDIT" = "편집하다";
+"BUTTON_DONE" = "완료";

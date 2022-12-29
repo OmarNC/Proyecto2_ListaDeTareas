@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Proyecto2_ListaDeTareas
+
+  Created by Omar Nieto on 28/12/22.
+  
+*/
+"ALERT_OK" = "OK" ;
+"ALERT_TITLE_BORRAR" = "Borrar" ;
+
+"ALERT_TITLE_VACIO" = "Campo título vacio" ;
+"ALERT_MENSSAGE_VACIO" = "El campo título no debe estar vacio" ;
+
+
+"BUTTON_EDIT" = "Editar";
+"BUTTON_DONE" = "Hecho";
